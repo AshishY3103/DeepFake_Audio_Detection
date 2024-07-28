@@ -45,6 +45,12 @@ Download the pre-trained models from the following link directory:
 2. Open your web browser and navigate to `http://127.0.0.1:5000`.
 
 3. Upload an audio file and click on 'Detect' to check if it is a Deepfake.
+## Results
+The model was tested on a dataset of real and synthetic audio files. The results are as follows:
 
+The model successfully distinguishes between real and synthetic audio with high accuracy, demonstrating its effectiveness in detecting Deepfake audio.
 
-## You can also refer report in this repository
+![Result Image 1](https://github.com/AshishY3103/DeepFake_Audio_Detection/blob/main/static/images/Screenshot%202024-07-28%20213935.png)
+![Result Image 2](https://github.com/AshishY3103/DeepFake_Audio_Detection/blob/main/static/images/Screenshot%202024-07-28%20213859.png)
+
+For more detailed information, refer to the [Final Report](https://github.com/AshishY3103/DeepFake_Audio_Detection/blob/main/Final%20Report.pdf).
