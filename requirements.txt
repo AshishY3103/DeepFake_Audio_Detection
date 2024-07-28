@@ -1,0 +1,9 @@
+Flask==2.1.2
+joblib==1.2.0
+numpy==1.22.0
+pandas==1.4.2
+librosa==0.9.1
+SoundFile==0.10.3.post1
+matplotlib==3.5.1
+scipy==1.8.0
+Keras==2.8.0

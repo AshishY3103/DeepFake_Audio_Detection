@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Bootstrap Container</title>
+  <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+
+    /* Custom CSS for about page */
+    .about-section {
+      padding: 100px 0;
+      background-color: #f8f9fa; /* Light gray background */
+    }
+
+    .about-heading {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .about-content {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+  </style>
+</head>
+<body class="bg-body-secondary
+">
+{% include 'navigation.html' %}
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="about-heading mt-5">About Deepfake Detection</h2>
+        <p class="about-content">
+          Deepfake Detection is a website dedicated to raising awareness about the dangers of deepfake technology and providing resources for detecting and combating deepfake content. Our mission is to empower individuals and organizations with the tools and knowledge needed to identify manipulated media and mitigate its harmful effects on society.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

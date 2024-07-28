@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Bootstrap Container</title>
+  <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+
+    .typing-text {
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0 auto;
+      border-right: 1px solid; /* Border for visibility */
+      animation: typing-animation 3s linear infinite;
+    }
+
+    @keyframes typing-animation {
+      0%, 50% {
+        width: 0;
+      }
+      60%, 100% {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body class="bg-body-secondary
+">
+{% include 'navigation.html' %}
+  <div class="container-fluid mt-5 bg-image">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-6 mt-5">
+        <h3 class="text-center">Welcome To</h3>
+        <h1 class="text-center">
+          <span id="typingText" class="typing-text"></span>
+        </h1>
+        <div class="row justify-content-center mt-5 shadow-lg p-5 bg-body-secondary" style="border-radius: 20px;">
+          <div class="col-md-6">
+            <form action="{{ url_for('result') }}" method="post" enctype="multipart/form-data" class="text-center">
+              
+              <div class="form-group">
+                <label class="form-label">Choose a Audio File :</label> <input class="form-control-file shadow p-1 bg-body-tertiary rounded" type="file" name="file" id="file" accept=".mp3">
+              </div>
+              <div class="form-group mt-3">
+                <input type="submit" value="Detect" class="btn btn-primary px-4 py-2 shadow">
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // JavaScript for typing animation
+  const text = "Sigma Deepfake Detector";
+  const typingSpeed = 100; // Adjust typing speed (milliseconds per character)
+
+  function typeText(index, direction) {
+    const typingText = document.getElementById("typingText");
+    if (direction === "forward") {
+      if (index <= text.length) {
+        typingText.textContent = text.slice(0, index);
+        setTimeout(() => {
+          typeText(index + 1, "forward");
+        }, typingSpeed);
+      } else {
+        setTimeout(() => {
+          typeText(index - 1, "backward");
+        }, typingSpeed * 2); // Pause before starting backspacing
+      }
+    } else if (direction === "backward") {
+      if (index >= 0) {
+        typingText.textContent = text.slice(0, index);
+        setTimeout(() => {
+          typeText(index - 1, "backward");
+        }, typingSpeed);
+      } else {
+        setTimeout(() => {
+          typeText(0, "forward");
+        }, typingSpeed * 2); // Pause before starting typing again
+      }
+    }
+  }
+
+  // Start typing animation
+  typeText(0, "forward");
+});
+</script>
+</body>
+</html>
